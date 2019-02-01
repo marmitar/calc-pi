@@ -1,5 +1,5 @@
 CC = gcc
-CFLAGS = -g
+CFLAGS = -march=znver1 -O3 -pipe -fstack-protector-strong -fno-plt
 CLIBS = -lmpfr -lgmp -lm -lpthread
 
 TARGET = pi
@@ -17,3 +17,4 @@ $(TARGET): $(OBJ)
 
 clean:
 	rm -f $(TARGET) *.o
+DEBUG_CFLAGS="-g -fvar-tracking-assignments"
